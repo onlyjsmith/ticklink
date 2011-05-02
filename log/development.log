@@ -1,0 +1,270 @@
+
+
+Started GET "/ticklink" for 127.0.0.1 at 2011-05-02 17:00:55 +0100
+
+ActionController::RoutingError (No route matches "/ticklink"):
+  
+
+Rendered /Users/jonathan/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+  [1m[36mSQL (14.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (2.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateChains (20110502160137)
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "chains" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110502160137')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("chains")
+
+
+Started GET "/chain" for 127.0.0.1 at 2011-05-02 17:01:47 +0100
+
+ActionController::RoutingError (No route matches "/chain"):
+  
+
+Rendered /Users/jonathan/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/chains" for 127.0.0.1 at 2011-05-02 17:01:49 +0100
+  Processing by ChainsController#index as HTML
+  [1m[36mChain Load (0.6ms)[0m  [1mSELECT "chains".* FROM "chains"[0m
+Rendered chains/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 68ms (Views: 7.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/chains/new" for 127.0.0.1 at 2011-05-02 17:01:52 +0100
+  Processing by ChainsController#new as HTML
+Rendered chains/_form.html.erb (119.5ms)
+Rendered chains/new.html.erb within layouts/application (123.3ms)
+Completed 200 OK in 136ms (Views: 127.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chains" for 127.0.0.1 at 2011-05-02 17:01:57 +0100
+  Processing by ChainsController#index as HTML
+  [1m[35mChain Load (0.4ms)[0m  SELECT "chains".* FROM "chains"
+Rendered chains/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 15ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chains/new" for 127.0.0.1 at 2011-05-02 17:02:02 +0100
+  Processing by ChainsController#new as HTML
+Rendered chains/_form.html.erb (40.4ms)
+Rendered chains/new.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 55ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/chains" for 127.0.0.1 at 2011-05-02 17:02:04 +0100
+  Processing by ChainsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGC/OblVMKe4eE5uv3sSzHZH7716tmq8c/wAwUr7btM=", "chain"=>{"date(1i)"=>"2011", "date(2i)"=>"5", "date(3i)"=>"2", "name"=>"X"}, "commit"=>"Create Chain"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "chains" ("date", "name", "created_at", "updated_at") VALUES ('2011-05-02', 'X', '2011-05-02 16:02:04.947356', '2011-05-02 16:02:04.947356')
+Redirected to http://localhost:3000/chains/1
+Completed 302 Found in 32ms
+
+
+Started GET "/chains/1" for 127.0.0.1 at 2011-05-02 17:02:04 +0100
+  Processing by ChainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mChain Load (0.2ms)[0m  [1mSELECT "chains".* FROM "chains" WHERE "chains"."id" = 1 LIMIT 1[0m
+Rendered chains/show.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 62ms (Views: 54.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chains" for 127.0.0.1 at 2011-05-02 17:02:06 +0100
+  Processing by ChainsController#index as HTML
+  [1m[35mChain Load (0.4ms)[0m  SELECT "chains".* FROM "chains"
+Rendered chains/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 19ms (Views: 13.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chains/new" for 127.0.0.1 at 2011-05-02 17:02:08 +0100
+  Processing by ChainsController#new as HTML
+Rendered chains/_form.html.erb (7.9ms)
+Rendered chains/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 56ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/chains" for 127.0.0.1 at 2011-05-02 17:02:12 +0100
+  Processing by ChainsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGC/OblVMKe4eE5uv3sSzHZH7716tmq8c/wAwUr7btM=", "chain"=>{"date(1i)"=>"2011", "date(2i)"=>"5", "date(3i)"=>"1", "name"=>"X"}, "commit"=>"Create Chain"}
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "chains" ("date", "name", "created_at", "updated_at") VALUES ('2011-05-01', 'X', '2011-05-02 16:02:12.374991', '2011-05-02 16:02:12.374991')[0m
+Redirected to http://localhost:3000/chains/2
+Completed 302 Found in 20ms
+
+
+Started GET "/chains/2" for 127.0.0.1 at 2011-05-02 17:02:12 +0100
+  Processing by ChainsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mChain Load (0.3ms)[0m  SELECT "chains".* FROM "chains" WHERE "chains"."id" = 2 LIMIT 1
+Rendered chains/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 55ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chains" for 127.0.0.1 at 2011-05-02 17:02:13 +0100
+  Processing by ChainsController#index as HTML
+  [1m[36mChain Load (0.4ms)[0m  [1mSELECT "chains".* FROM "chains"[0m
+Rendered chains/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 21ms (Views: 14.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/chains/new" for 127.0.0.1 at 2011-05-02 17:04:40 +0100
+  Processing by ChainsController#new as HTML
+Rendered chains/_form.html.erb (7.7ms)
+Rendered chains/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 21ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/chains" for 127.0.0.1 at 2011-05-02 17:04:48 +0100
+  Processing by ChainsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGC/OblVMKe4eE5uv3sSzHZH7716tmq8c/wAwUr7btM=", "chain"=>{"date(1i)"=>"2011", "date(2i)"=>"4", "date(3i)"=>"30", "name"=>"X"}, "commit"=>"Create Chain"}
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "chains" ("date", "name", "created_at", "updated_at") VALUES ('2011-04-30', 'X', '2011-05-02 16:04:48.546970', '2011-05-02 16:04:48.546970')
+Redirected to http://localhost:3000/chains/3
+Completed 302 Found in 21ms
+
+
+Started GET "/chains/3" for 127.0.0.1 at 2011-05-02 17:04:48 +0100
+  Processing by ChainsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChain Load (0.2ms)[0m  [1mSELECT "chains".* FROM "chains" WHERE "chains"."id" = 3 LIMIT 1[0m
+Rendered chains/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 20ms (Views: 11.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chains" for 127.0.0.1 at 2011-05-02 17:04:50 +0100
+  Processing by ChainsController#index as HTML
+  [1m[35mChain Load (0.4ms)[0m  SELECT "chains".* FROM "chains"
+Rendered chains/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 23ms (Views: 16.8ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateChains (20110502160137)
+Migrating to CreateEvents (20110502180216)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (9.6ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "start_at" datetime, "end_at" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110502180216')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("chains")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("events")[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateChains (20110502160137)
+Migrating to CreateEvents (20110502180216)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("chains")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("events")[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateChains (20110502160137)
+Migrating to CreateEvents (20110502180216)
+Migrating to AddDurationToChain (20110502180802)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mALTER TABLE "chains" ADD "duration" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110502180802')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("chains")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("events")[0m
+
+
+Started GET "/chains" for 127.0.0.1 at 2011-05-02 19:08:33 +0100
+  Processing by ChainsController#index as HTML
+  [1m[36mChain Load (0.8ms)[0m  [1mSELECT "chains".* FROM "chains"[0m
+Rendered chains/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 25ms (Views: 17.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/chains/1" for 127.0.0.1 at 2011-05-02 19:08:35 +0100
+  Processing by ChainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mChain Load (0.3ms)[0m  SELECT "chains".* FROM "chains" WHERE "chains"."id" = 1 LIMIT 1
+Rendered chains/show.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 60ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mChain Load (0.5ms)[0m  SELECT "chains".* FROM "chains"
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mChain Load (0.5ms)[0m  SELECT "chains".* FROM "chains"
